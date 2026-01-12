@@ -7,9 +7,9 @@ const TaskCard = ({ task, onEdit, onDelete }) => {
   return (
     <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm">
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <h3 className="text-sm font-semibold text-white">{task.title}</h3>
-          <p className="mt-1 max-w-[220px] truncate text-xs text-slate-300">{task.description}</p>
+        <div className="min-w-0">
+          <h3 className="truncate text-sm font-semibold text-white">{task.title}</h3>
+          <p className="mt-1 break-words text-xs text-slate-300">{task.description}</p>
         </div>
         <div className="flex shrink-0 flex-col gap-2">
           <button
