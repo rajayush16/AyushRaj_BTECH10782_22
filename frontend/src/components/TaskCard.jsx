@@ -6,7 +6,7 @@ const TaskCard = ({ task, onEdit, onDelete }) => {
       <div className="flex items-start justify-between gap-3">
         <div>
           <h3 className="text-sm font-semibold text-white">{task.title}</h3>
-          <p className="mt-1 text-xs text-slate-300 line-clamp-2">{task.description}</p>
+          <p className="mt-1 max-w-[220px] truncate text-xs text-slate-300">{task.description}</p>
         </div>
         <div className="flex shrink-0 flex-col gap-2">
           <button
