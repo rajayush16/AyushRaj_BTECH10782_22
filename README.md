@@ -1,20 +1,15 @@
 # Task Management System (Kanban Based)
 
-A full-stack task management system with authentication and a Kanban-style board. Users can register, login, manage their profile, and perform full CRUD on tasks with drag-and-drop status updates.
+## Project Overview
+This is a full-stack task management system with authentication and a Kanban-style board. Users can register, login, manage their profile, and perform full CRUD on tasks with drag-and-drop status updates.
 
-## Tech Stack
+## Tech Stack Used
 - Frontend: React (Vite), Tailwind CSS, @hello-pangea/dnd
 - Backend: Node.js, Express.js
 - Database: MongoDB (Mongoose)
 - Auth: JWT
 
-## Project Structure
-```
-/backend
-/frontend
-```
-
-## Backend Setup
+## Backend Setup Instructions
 1. Install dependencies:
    ```bash
    cd backend
@@ -29,7 +24,7 @@ A full-stack task management system with authentication and a Kanban-style board
    npm run dev
    ```
 
-## Frontend Setup
+## Frontend Setup Instructions
 1. Install dependencies:
    ```bash
    cd frontend
@@ -44,7 +39,7 @@ A full-stack task management system with authentication and a Kanban-style board
    npm run dev
    ```
 
-## Environment Variables
+## Environment Variables Configuration
 Backend (`backend/.env`):
 - `PORT`
 - `MONGO_URI`
@@ -72,6 +67,6 @@ Tasks:
 - `PUT /api/tasks/:id`
 - `DELETE /api/tasks/:id`
 
-## Notes
-- Tokens are stored in `localStorage` for simplicity (see assignment requirement).
-- Tasks are user-scoped and filtered server-side.
+## Screenshots / Demo
+- Demo URL: (add if available)
+- Screenshots: (add if available)
