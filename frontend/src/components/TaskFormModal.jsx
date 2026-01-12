@@ -38,13 +38,19 @@ const TaskFormModal = ({ isOpen, onClose, onSubmit, initialData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit({
+    const payload = {
       ...form,
       due_date: form.due_date ? new Date(form.due_date).toISOString() : '',
       completed_date: form.completed_date
         ? new Date(form.completed_date).toISOString()
-        : '',
-    });
+        : undefined,
+    };
+
+    if (!payload.completed_date || payload.status !== 'completed') {
+      delete payload.completed_date;
+    }
+
+    onSubmit(payload);
   };
 
   return (
