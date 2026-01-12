@@ -1,5 +1,8 @@
 const TaskCard = ({ task, onEdit, onDelete }) => {
   const due = task.due_date ? new Date(task.due_date).toLocaleDateString() : 'No due date';
+  const created = task.created_at
+    ? new Date(task.created_at).toLocaleDateString()
+    : 'Unknown';
 
   return (
     <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm">
@@ -24,6 +27,7 @@ const TaskCard = ({ task, onEdit, onDelete }) => {
         </div>
       </div>
       <div className="mt-3 text-xs text-slate-400">Due: {due}</div>
+      <div className="mt-1 text-[11px] text-slate-500">Created: {created}</div>
     </div>
   );
 };
