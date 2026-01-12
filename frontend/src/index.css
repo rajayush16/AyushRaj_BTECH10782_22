@@ -5,3 +5,15 @@
 body {
   @apply bg-slate-950 text-slate-100 antialiased;
 }
+
+.date-input {
+  color-scheme: dark;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  background-color: #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  padding: 4px;
+}

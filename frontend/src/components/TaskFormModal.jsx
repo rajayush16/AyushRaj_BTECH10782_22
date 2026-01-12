@@ -98,7 +98,7 @@ const TaskFormModal = ({ isOpen, onClose, onSubmit, initialData }) => {
                 value={form.due_date}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                className="date-input mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
               />
             </div>
           </div>
