@@ -2,7 +2,11 @@ const Task = require('../models/Task');
 const ApiError = require('../utils/ApiError');
 
 const createTask = async (userId, payload) => {
-  return Task.create({ ...payload, userId });
+  const data = { ...payload, userId };
+  if (data.status === 'completed' && !data.completed_date) {
+    data.completed_date = new Date();
+  }
+  return Task.create(data);
 };
 
 const getTasks = async (userId, status) => {
@@ -22,9 +26,14 @@ const getTaskById = async (userId, taskId) => {
 };
 
 const updateTask = async (userId, taskId, payload) => {
+  const data = { ...payload };
+  if (data.status === 'completed' && !data.completed_date) {
+    data.completed_date = new Date();
+  }
+
   const task = await Task.findOneAndUpdate(
     { _id: taskId, userId },
-    payload,
+    data,
     { new: true }
   );
 

@@ -5,6 +5,7 @@ const emptyForm = {
   description: '',
   status: 'pending',
   due_date: '',
+  completed_date: '',
 };
 
 const TaskFormModal = ({ isOpen, onClose, onSubmit, initialData }) => {
@@ -18,6 +19,9 @@ const TaskFormModal = ({ isOpen, onClose, onSubmit, initialData }) => {
         status: initialData.status || 'pending',
         due_date: initialData.due_date
           ? new Date(initialData.due_date).toISOString().split('T')[0]
+          : '',
+        completed_date: initialData.completed_date
+          ? new Date(initialData.completed_date).toISOString().split('T')[0]
           : '',
       });
     } else {
@@ -37,6 +41,9 @@ const TaskFormModal = ({ isOpen, onClose, onSubmit, initialData }) => {
     onSubmit({
       ...form,
       due_date: form.due_date ? new Date(form.due_date).toISOString() : '',
+      completed_date: form.completed_date
+        ? new Date(form.completed_date).toISOString()
+        : '',
     });
   };
 
@@ -101,6 +108,20 @@ const TaskFormModal = ({ isOpen, onClose, onSubmit, initialData }) => {
                 className="date-input mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
               />
             </div>
+            {form.status === 'completed' ? (
+              <div className="sm:col-span-2">
+                <label className="text-xs uppercase tracking-wide text-slate-400">
+                  Completed date
+                </label>
+                <input
+                  type="date"
+                  name="completed_date"
+                  value={form.completed_date}
+                  onChange={handleChange}
+                  className="date-input mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+                />
+              </div>
+            ) : null}
           </div>
           <div className="flex justify-end gap-3">
             <button

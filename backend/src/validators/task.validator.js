@@ -14,6 +14,7 @@ const createTask = z.object({
     description: z.string().min(1, 'Description is required'),
     status: statusEnum.optional(),
     due_date: z.coerce.date(),
+    completed_date: z.coerce.date().optional(),
   }),
 });
 
@@ -27,6 +28,7 @@ const updateTask = z.object({
       description: z.string().min(1).optional(),
       status: statusEnum.optional(),
       due_date: z.coerce.date().optional(),
+      completed_date: z.coerce.date().optional(),
     })
     .refine((data) => Object.keys(data).length > 0, {
       message: 'At least one field is required',

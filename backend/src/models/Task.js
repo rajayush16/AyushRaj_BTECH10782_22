@@ -10,6 +10,7 @@ const taskSchema = new mongoose.Schema(
       default: 'pending',
     },
     due_date: { type: Date, required: true },
+    completed_date: { type: Date },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
