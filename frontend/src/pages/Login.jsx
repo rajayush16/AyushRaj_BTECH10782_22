@@ -22,7 +22,9 @@ const Login = () => {
       await login(form);
       navigate('/board');
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed');
+      const apiError = err.response?.data;
+      const details = apiError?.data?.details;
+      setError(details?.[0]?.message || apiError?.message || 'Login failed');
     } finally {
       setLoading(false);
     }

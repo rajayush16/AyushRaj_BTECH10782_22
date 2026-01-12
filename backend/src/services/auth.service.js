@@ -19,12 +19,12 @@ const registerUser = async ({ name, email, password }) => {
 const loginUser = async ({ email, password }) => {
   const user = await User.findOne({ email }).select('+password');
   if (!user) {
-    throw new ApiError('Invalid credentials', 401);
+    throw new ApiError('User does not exist', 404);
   }
 
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    throw new ApiError('Invalid credentials', 401);
+    throw new ApiError('Invalid password', 401);
   }
 
   const token = signToken({ id: user._id });
