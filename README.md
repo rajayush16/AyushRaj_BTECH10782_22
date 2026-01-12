@@ -67,6 +67,20 @@ Tasks:
 - `PUT /api/tasks/:id`
 - `DELETE /api/tasks/:id`
 
-## Screenshots / Demo
-- Demo URL: (add if available)
-- Screenshots: (add if available)
+## Screenshots
+
+### Login
+<img src="frontend/public/assets/login.png" width="800"/>
+
+### Signup
+<img src="frontend/public/assets/signup.png" width="800"/>
+
+### Kanban Board
+<img src="frontend/public/assets/board.png" width="800"/>
+
+### Create New Task
+<img src="frontend/public/assets/new task.png" width="800"/>
+
+### Profile
+<img src="frontend/public/assets/profile.png" width="800"/>
+
